@@ -168,13 +168,21 @@ let computer = new Player("Computer", 0);
                   }
 
                    if (player.score==5){
-                      alert("you win a battle");
-                      reset();
+                     document.querySelector(".modal").classList.add("modal--active");
+                     document.querySelector(".modal__heading").innerHTML="Congratulations!";
+                     document.querySelector(".modal__message").innerHTML="You win!";
                    }
                    else if(computer.score==5){
-                      alert("yoyu lose a battle");
-                      reset();
+                     document.querySelector(".modal").classList.add("modal--active");
+                     document.querySelector(".modal__heading").innerHTML="Upsss...";
+                     document.querySelector(".modal__message").innerHTML="You lost!";
                    }
+
+                   document.querySelector(".modal__btn").addEventListener("click", function(){
+                     document.querySelector(".modal").classList.remove("modal--active");
+                     reset();
+                   });
+
 
                    let t1 = performance.now();
                    console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");

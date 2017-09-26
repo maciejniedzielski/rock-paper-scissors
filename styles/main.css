@@ -6,6 +6,52 @@
 body{
   background-image: url("../images/bg.jpg");
   height: auto;
+  position: relative;
+}
+.modal{
+  width: 90%;
+  height: 50vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #ffa84c 0%,#ff7b0d 100%);
+  border-radius: 0.5rem;
+  display: none;
+  box-shadow: 0 5px 0 3px #ffffff;
+}
+.modal--active{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  position: fixed;
+  z-index: 9999;
+  margin: 0 auto;
+  top: 20%;
+  left: 0;
+  right: 0;
+}
+.modal__heading {
+  color: #ffffff;
+  font-weight: lighter;
+}
+.modal__message {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+.modal__btn{
+  color: #ffffff;
+  padding: 1rem;
+  border: 3px solid #ffffff;
+  background: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.modal__btn:hover, .modal__btn:focus {
+  color: #ff7b0d;
+  padding: 1rem;
+  border: 3px solid #ff7b0d;
+  background: #ffffff;
 }
 .game-container{
   width: 100%;
@@ -162,6 +208,9 @@ body{
 }
 
 @media all and (max-width: 450px){
+  .modal__message{
+    font-size: 0.9rem;
+  }
   .game-container {
     padding: 1rem;
     justify-content: space-around;
@@ -213,4 +262,23 @@ body{
     font-size: 0.6rem;
 
   }
+}
+@media (min-width: 445px) and (max-width: 670px){
+  .intro{
+    font-size: 1.5rem;
+  }
+  .weapon__btn{
+    font-size: 4rem;
+    margin: 0.5rem;
+  }
+  .result__text{
+    font-size: 2rem;
+  }
+  .modal{
+    height: 70vh;
+  }
+  .modal--active{
+    top: 15%;
+  }
+
 }
